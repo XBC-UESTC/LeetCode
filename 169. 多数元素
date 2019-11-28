@@ -1,0 +1,17 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        if(nums.length<1)return -1;
+        int count = 1;
+        int label = nums[0];
+        for(int i=1;i<nums.length;i++)
+        {   if(count==0) label=nums[i];
+            if(nums[i]==label)count++;
+            else count--;
+            
+        }
+        return label;
+    }
+}
+
+执行用时 :2 ms, 在所有 java 提交中击败了92.40%的用户
+内存消耗 :42.4 MB, 在所有 java 提交中击败了82.58%的用户
